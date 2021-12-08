@@ -37,3 +37,17 @@ D:\Project\CT251_windowsForm\obj\Debug\CoffeeShopManager.csproj.GenerateResource
 D:\Project\CT251_windowsForm\obj\Debug\CoffeeShopManager.csproj.CoreCompileInputs.cache
 D:\Project\CT251_windowsForm\obj\Debug\CoffeeShopManager.exe
 D:\Project\CT251_windowsForm\obj\Debug\CoffeeShopManager.pdb
+C:\Users\phatt\Source\Repos\CT225_Winform\bin\Debug\CoffeeShopManager.exe.config
+C:\Users\phatt\Source\Repos\CT225_Winform\bin\Debug\CoffeeShopManager.exe
+C:\Users\phatt\Source\Repos\CT225_Winform\bin\Debug\CoffeeShopManager.pdb
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.csproj.AssemblyReference.cache
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.fAccountProfile.resources
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.fAdmin.resources
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.fChangeTable.resources
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.fTableManager.resources
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.fLogin.resources
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.Properties.Resources.resources
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.csproj.GenerateResource.cache
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.csproj.CoreCompileInputs.cache
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.exe
+C:\Users\phatt\Source\Repos\CT225_Winform\obj\Debug\CoffeeShopManager.pdb

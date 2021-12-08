@@ -19,9 +19,12 @@ namespace CoffeeShopManager
         BindingSource tableFoodList = new BindingSource();
         BindingSource accountList = new BindingSource();
         public Account loginAccount;
+        SqlConnection connection;
+
         public fAdmin()
         {
             InitializeComponent();
+            connection = DBInstance.generate();
             dtgvFood.DataSource = foodList;
             dtgvCategory.DataSource = categoryFoodList;
             dtgvTable.DataSource = tableFoodList;
@@ -37,7 +40,7 @@ namespace CoffeeShopManager
             LoadListAccount();
             addAccountBinding();
         }
-        #region Methods
+
         void LoadDateTimePickerBill()
         {
             dtpkFromDate.Format = DateTimePickerFormat.Custom; 
@@ -53,20 +56,15 @@ namespace CoffeeShopManager
         }
         public void LoadListBillByDate(string checkIn, string checkOut)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "EXEC USP_getListBillByDate '" + checkIn + "', '" + checkOut + "'";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             dtgvBill.DataSource = data;
         }
 
         //FOOD
-        #region FoodMethods
         void addFoodBinding()
         {
             txtFoodName.DataBindings.Add(new Binding("Text", dtgvFood.DataSource, "TÊN MÓN", true, DataSourceUpdateMode.Never));
@@ -75,34 +73,21 @@ namespace CoffeeShopManager
         }
         void LoadListFood()
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectSTR);
-
-            connection.Open();
 
             string query = "SELECT f.id AS [MÃ], f.name AS [TÊN MÓN], c.name AS [DANH MỤC], price AS [GIÁ] FROM Food AS f JOIN CategoryFood AS c ON f.idCategory = c.id";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             foodList.DataSource = data;
         }
         void LoadListCategoryNameForComboBox()
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectSTR);
-
-            connection.Open();
-
             string query = "SELECT * FROM CategoryFood";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             List<Category> listCategory = new List<Category>();
             foreach (DataRow item in data.Rows)
             {
@@ -115,32 +100,21 @@ namespace CoffeeShopManager
         }
         void LoadListFoodLikeValueSearch(string key_search)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectSTR);
-
-            connection.Open();
-
             string query = "SELECT f.id AS [MÃ], f.name AS [TÊN MÓN], c.name AS [DANH MỤC], price AS [GIÁ] FROM Food AS f JOIN CategoryFood AS c ON f.idCategory = c.id";
             query += " WHERE f.name LIKE N'%" + key_search + "%'";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             foodList.DataSource = data;
         }
         Food GetFoodByName(string food_name)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT * FROM Food WHERE name = N'" + food_name + "'";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             Food food = null;
             foreach (DataRow item in data.Rows)
             {
@@ -151,56 +125,39 @@ namespace CoffeeShopManager
         }
         bool InsertFood(string food_name, int category_id, float food_price)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "INSERT Food (name, idCategory, price) VALUES (N'" + food_name + "', "+ category_id+", "+ food_price+")";
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool UpdateFood(int food_id, int category_id, string food_name, float food_price)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "UPDATE Food SET name = N'" + food_name + "', price = "+ food_price + ", idCategory = "+ category_id + " WHERE id = " + food_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool DeleteBillInfoByIdFood(int food_id)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "DELETE BillInfo WHERE idFood = " + food_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool DeleteFood(int food_id)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "DELETE Food WHERE id = " + food_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
-        #endregion
+        
 
         //CATEGORY
-        #region CategoryMethods
         void addCategoryFoodBinding()
         {
             txtCategoryName.DataBindings.Add(new Binding("Text", dtgvCategory.DataSource, "TÊN DANH MỤC", true, DataSourceUpdateMode.Never));
@@ -208,15 +165,11 @@ namespace CoffeeShopManager
         }
         Category GetCategoryByName(string name)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT * FROM CategoryFood WHERE name = N'" + name + "'";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             Category category = null;
             foreach (DataRow item in data.Rows)
             {
@@ -227,70 +180,49 @@ namespace CoffeeShopManager
         }
         void LoadListCategoryFood()
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT c.id AS [MÃ], c.name AS [TÊN DANH MỤC], (CASE WHEN COUNT(f.id) > 0 THEN COUNT(f.id) ELSE 0 END) as [SỐ LƯỢNG MÓN] ";
                 query += "FROM CategoryFood AS c LEFT JOIN Food AS f ON f.idCategory = c.id GROUP BY c.name, c.id";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             categoryFoodList.DataSource = data;
         }
         bool InsertCategory(string category_name)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "INSERT CategoryFood (name) VALUES (N'" + category_name + "')";
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool UpdateCategory(int category_id, string category_name)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "UPDATE CategoryFood SET name = N'" + category_name + "' WHERE id = "+ category_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool DeleteFoodByIdCategory(int category_id)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "EXEC USP_DeleteFoodByIdCategory " + category_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool DeleteCategory(int category_id)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "DELETE CategoryFood WHERE id = " + category_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
-        #endregion
+        
 
         //TABLE
-        #region TableMethods
         void addTableFoodBinding()
         {
             txtTableName.DataBindings.Add(new Binding("Text", dtgvTable.DataSource, "TÊN BÀN", true, DataSourceUpdateMode.Never));
@@ -299,29 +231,21 @@ namespace CoffeeShopManager
         }
         void LoadListTableFood()
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT t.id AS [MÃ], t.name AS [TÊN BÀN],t.status AS [TRẠNG THÁI], (CASE WHEN COUNT(b.id) > 0 THEN COUNT(b.id) ELSE 0 END) AS [SL HĐ] ";
             query += "FROM TableFood AS t LEFT JOIN Bill AS b ON t.id = b.idTable GROUP BY t.name, t.id, t.status";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             tableFoodList.DataSource = data;
         }
         Table GetTableByName(string table_name)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT * FROM TableFood WHERE name = N'" + table_name + "'";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             Table table = null;
             foreach (DataRow item in data.Rows)
             {
@@ -332,56 +256,39 @@ namespace CoffeeShopManager
         }
         bool InsertTable(string table_name)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "INSERT TableFood (name) VALUES (N'" + table_name + "')";
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool UpdateTable(int table_id, string table_name, string table_status)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "UPDATE TableFood SET name = N'" + table_name + "', status = N'" + table_status + "' WHERE id = " + table_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool DeleteBillByIdTable(int table_id)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "EXEC USP_DeleteBillIdTable " + table_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool DeleteTable(int table_id)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "DELETE TableFood WHERE id = " + table_id;
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
-        #endregion
+        
 
         //Account
-        #region AccountMethods
         void addAccountBinding()
         {
             txtUserName.DataBindings.Add(new Binding("Text", dtgvAccount.DataSource, "TÊN ĐĂNG NHẬP", true, DataSourceUpdateMode.Never));
@@ -390,28 +297,20 @@ namespace CoffeeShopManager
         }
         void LoadListAccount()
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT UserName AS [TÊN ĐĂNG NHẬP], DisplayName AS [TÊN HIỂN THỊ], Type AS [LOẠI TÀI KHOẢN] FROM Account";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             accountList.DataSource = data;
         }
         Account getAccountByUserName(string username)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT * FROM Account WHERE UserName = N'" + username + "'";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             foreach (DataRow item in data.Rows)
             {
                 return new Account(item);
@@ -434,57 +333,38 @@ namespace CoffeeShopManager
         bool InsertAccount(string username, string displayname, int type)
         {
             string password_new = EncodingPassword("0");
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "INSERT Account (UserName, DisplayName, Type, PassWord) VALUES (N'" + username + "', N'" + displayname + "', " + type + ", N'" + password_new + "')";
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool DeleteAccount(string username)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "DELETE Account WHERE UserName = N'" + username + "'";
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool UpdateAccount(string username, string display_name, int type)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "UPDATE Account SET DisplayName = N'"+ display_name+ "', Type = " +type+ " WHERE UserName = N'"+username+"'";
             SqlCommand command = new SqlCommand(query, connection);            
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
         bool ResetPasswordAccount(string username)
         {
             string password = EncodingPassword("0");
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "UPDATE Account SET PassWord = N'" + password + "' WHERE UserName = N'" + username + "'";
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
             result = (int)command.ExecuteNonQuery();
-            connection.Close();
             return result > 0;
         }
-        #endregion
-        #endregion
 
-        #region Events
         //BILL
         private void btnViewBill_Click(object sender, EventArgs e)
         {
@@ -492,8 +372,7 @@ namespace CoffeeShopManager
             string endDate = dtpkToDate.Value.Date.ToString("yyyy-MM-dd");
             LoadListBillByDate(beginDate, endDate);
         }
-        //FOOD
-        #region FoodEvents
+
         private void txtFoodID_TextChanged(object sender, EventArgs e)
         {
             if (dtgvFood.SelectedCells.Count > 0)
@@ -518,20 +397,24 @@ namespace CoffeeShopManager
                 }
             }
         }
+
         private void txtSearchFood_Click(object sender, EventArgs e)
         {
             txtSearchFood.Text = "";
         }
+
         private void btnSearchFood_Click(object sender, EventArgs e)
         {
             string key_search = txtSearchFood.Text;
             if (!key_search.Equals("")) LoadListFoodLikeValueSearch(key_search);
             else LoadListFood();
         }
+
         private void btnShowFood_Click(object sender, EventArgs e)
         {
             LoadListFood();
         }
+
         private event EventHandler insertFoodEvent;
         public event EventHandler InsertFoodEvent
         {
@@ -623,10 +506,7 @@ namespace CoffeeShopManager
             }
         }
 
-        #endregion
-
         //CATEGORY
-        #region CaegoryEvents
         private event EventHandler insertCategoryFoodEvent;
         public event EventHandler InsertCategoryFooodEvent
         {
@@ -715,10 +595,9 @@ namespace CoffeeShopManager
                 MessageBox.Show("Xóa danh mục KHÔNG thành công !!!", "Báo lỗi!");
             }
         }
-        #endregion
+        
 
         //TABLE
-        #region TableEvents
         private event EventHandler insertTableFoodEvent;
         public event EventHandler InsertTableFoodEvent
         {
@@ -807,10 +686,9 @@ namespace CoffeeShopManager
                 MessageBox.Show("Xóa bàn ăn KHÔNG thành công !!!", "Báo lỗi!");
             }
         }
-        #endregion
+        
 
         //ACCOUNT
-        #region AccountEvents
         private event EventHandler<AccountEvent> updateAccountEvent;
         public event EventHandler<AccountEvent> UpdateAccountEvent
         {
@@ -891,10 +769,7 @@ namespace CoffeeShopManager
                 MessageBox.Show("Khôi phục mật khẩu không thành công !!!", "Báo lỗi !");
             }
         }
-        #endregion
-        #endregion
 
-        #region AccountEvents
         public class AccountEvent : EventArgs
         {
             private Account acc;
@@ -908,7 +783,5 @@ namespace CoffeeShopManager
                 this.Acc = acc;
             }
         }
-
-        #endregion
     }
 }

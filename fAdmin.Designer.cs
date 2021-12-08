@@ -31,6 +31,8 @@ namespace CoffeeShopManager
         {
             this.tpRevenue = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.btnViewBill = new System.Windows.Forms.Button();
             this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
             this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
@@ -112,7 +114,6 @@ namespace CoffeeShopManager
             this.panel25 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.panel26 = new System.Windows.Forms.Panel();
-            this.btnShowAccount = new System.Windows.Forms.Button();
             this.btnDelAccount = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
@@ -162,30 +163,55 @@ namespace CoffeeShopManager
             this.tpRevenue.Controls.Add(this.panel2);
             this.tpRevenue.Controls.Add(this.panel1);
             this.tpRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tpRevenue.Location = new System.Drawing.Point(4, 35);
+            this.tpRevenue.Location = new System.Drawing.Point(4, 25);
+            this.tpRevenue.Margin = new System.Windows.Forms.Padding(2);
             this.tpRevenue.Name = "tpRevenue";
-            this.tpRevenue.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRevenue.Size = new System.Drawing.Size(1230, 610);
+            this.tpRevenue.Padding = new System.Windows.Forms.Padding(2);
+            this.tpRevenue.Size = new System.Drawing.Size(920, 498);
             this.tpRevenue.TabIndex = 1;
             this.tpRevenue.Text = "Doanh thu";
             this.tpRevenue.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.btnViewBill);
             this.panel2.Controls.Add(this.dtpkFromDate);
             this.panel2.Controls.Add(this.dtpkToDate);
-            this.panel2.Location = new System.Drawing.Point(6, 6);
+            this.panel2.Location = new System.Drawing.Point(4, 5);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1215, 74);
+            this.panel2.Size = new System.Drawing.Size(911, 60);
             this.panel2.TabIndex = 1;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label17.Location = new System.Drawing.Point(403, 24);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(69, 17);
+            this.label17.TabIndex = 4;
+            this.label17.Text = "Đến ngày";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label16.Location = new System.Drawing.Point(56, 24);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(60, 17);
+            this.label16.TabIndex = 3;
+            this.label16.Text = "Từ ngày";
             // 
             // btnViewBill
             // 
-            this.btnViewBill.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewBill.Location = new System.Drawing.Point(1010, 3);
+            this.btnViewBill.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnViewBill.Location = new System.Drawing.Point(751, 21);
+            this.btnViewBill.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewBill.Name = "btnViewBill";
-            this.btnViewBill.Size = new System.Drawing.Size(135, 68);
+            this.btnViewBill.Size = new System.Drawing.Size(101, 23);
             this.btnViewBill.TabIndex = 2;
             this.btnViewBill.Text = "Thống kê";
             this.btnViewBill.UseVisualStyleBackColor = true;
@@ -193,40 +219,45 @@ namespace CoffeeShopManager
             // 
             // dtpkFromDate
             // 
-            this.dtpkFromDate.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkFromDate.Location = new System.Drawing.Point(84, 15);
+            this.dtpkFromDate.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dtpkFromDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dtpkFromDate.Location = new System.Drawing.Point(121, 21);
+            this.dtpkFromDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkFromDate.Name = "dtpkFromDate";
-            this.dtpkFromDate.Size = new System.Drawing.Size(407, 36);
+            this.dtpkFromDate.Size = new System.Drawing.Size(219, 20);
             this.dtpkFromDate.TabIndex = 0;
             this.dtpkFromDate.ValueChanged += new System.EventHandler(this.btnViewBill_Click);
             // 
             // dtpkToDate
             // 
-            this.dtpkToDate.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkToDate.Location = new System.Drawing.Point(539, 15);
+            this.dtpkToDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.dtpkToDate.Location = new System.Drawing.Point(477, 21);
+            this.dtpkToDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpkToDate.Name = "dtpkToDate";
-            this.dtpkToDate.Size = new System.Drawing.Size(407, 36);
+            this.dtpkToDate.Size = new System.Drawing.Size(234, 20);
             this.dtpkToDate.TabIndex = 1;
             this.dtpkToDate.ValueChanged += new System.EventHandler(this.btnViewBill_Click);
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dtgvBill);
-            this.panel1.Location = new System.Drawing.Point(6, 86);
+            this.panel1.Location = new System.Drawing.Point(4, 70);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1218, 524);
+            this.panel1.Size = new System.Drawing.Size(914, 426);
             this.panel1.TabIndex = 0;
             // 
             // dtgvBill
             // 
             this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvBill.Location = new System.Drawing.Point(3, 3);
+            this.dtgvBill.Location = new System.Drawing.Point(2, 2);
+            this.dtgvBill.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.RowHeadersWidth = 51;
             this.dtgvBill.RowTemplate.Height = 24;
             this.dtgvBill.RowTemplate.ReadOnly = true;
-            this.dtgvBill.Size = new System.Drawing.Size(1212, 518);
+            this.dtgvBill.Size = new System.Drawing.Size(909, 421);
             this.dtgvBill.TabIndex = 0;
             // 
             // tcAdmin
@@ -236,11 +267,12 @@ namespace CoffeeShopManager
             this.tcAdmin.Controls.Add(this.tpCategory);
             this.tcAdmin.Controls.Add(this.tpTable);
             this.tcAdmin.Controls.Add(this.tpAccount);
-            this.tcAdmin.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tcAdmin.Location = new System.Drawing.Point(12, 12);
+            this.tcAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.tcAdmin.Location = new System.Drawing.Point(9, 10);
+            this.tcAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.tcAdmin.Name = "tcAdmin";
             this.tcAdmin.SelectedIndex = 0;
-            this.tcAdmin.Size = new System.Drawing.Size(1238, 649);
+            this.tcAdmin.Size = new System.Drawing.Size(928, 527);
             this.tcAdmin.TabIndex = 0;
             // 
             // tpFood
@@ -249,10 +281,11 @@ namespace CoffeeShopManager
             this.tpFood.Controls.Add(this.panel7);
             this.tpFood.Controls.Add(this.panel3);
             this.tpFood.Controls.Add(this.pnlUserName);
-            this.tpFood.Location = new System.Drawing.Point(4, 35);
+            this.tpFood.Location = new System.Drawing.Point(4, 25);
+            this.tpFood.Margin = new System.Windows.Forms.Padding(2);
             this.tpFood.Name = "tpFood";
-            this.tpFood.Padding = new System.Windows.Forms.Padding(3);
-            this.tpFood.Size = new System.Drawing.Size(1230, 610);
+            this.tpFood.Padding = new System.Windows.Forms.Padding(2);
+            this.tpFood.Size = new System.Drawing.Size(920, 498);
             this.tpFood.TabIndex = 2;
             this.tpFood.Text = "Món ăn";
             this.tpFood.UseVisualStyleBackColor = true;
@@ -263,124 +296,137 @@ namespace CoffeeShopManager
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.panel4);
-            this.panel5.Location = new System.Drawing.Point(762, 100);
+            this.panel5.Location = new System.Drawing.Point(572, 81);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(462, 510);
+            this.panel5.Size = new System.Drawing.Size(346, 414);
             this.panel5.TabIndex = 4;
             // 
             // panel9
             // 
             this.panel9.Controls.Add(this.nmFoodPrice);
             this.panel9.Controls.Add(this.label4);
-            this.panel9.Location = new System.Drawing.Point(13, 290);
+            this.panel9.Location = new System.Drawing.Point(10, 236);
+            this.panel9.Margin = new System.Windows.Forms.Padding(2);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(446, 68);
+            this.panel9.Size = new System.Drawing.Size(334, 55);
             this.panel9.TabIndex = 5;
             // 
             // nmFoodPrice
             // 
-            this.nmFoodPrice.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nmFoodPrice.Location = new System.Drawing.Point(172, 18);
+            this.nmFoodPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.nmFoodPrice.Location = new System.Drawing.Point(129, 15);
+            this.nmFoodPrice.Margin = new System.Windows.Forms.Padding(2);
             this.nmFoodPrice.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this.nmFoodPrice.Name = "nmFoodPrice";
-            this.nmFoodPrice.Size = new System.Drawing.Size(261, 34);
+            this.nmFoodPrice.Size = new System.Drawing.Size(196, 20);
             this.nmFoodPrice.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(4, 21);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label4.Location = new System.Drawing.Point(3, 17);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 27);
+            this.label4.Size = new System.Drawing.Size(47, 13);
             this.label4.TabIndex = 0;
-            this.label4.Text = "Price:";
+            this.label4.Text = "Giá bán:";
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.cbFoodCategory);
             this.panel8.Controls.Add(this.label3);
-            this.panel8.Location = new System.Drawing.Point(13, 199);
+            this.panel8.Location = new System.Drawing.Point(10, 162);
+            this.panel8.Margin = new System.Windows.Forms.Padding(2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(446, 68);
+            this.panel8.Size = new System.Drawing.Size(334, 55);
             this.panel8.TabIndex = 4;
             // 
             // cbFoodCategory
             // 
-            this.cbFoodCategory.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFoodCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cbFoodCategory.FormattingEnabled = true;
-            this.cbFoodCategory.Location = new System.Drawing.Point(172, 18);
+            this.cbFoodCategory.Location = new System.Drawing.Point(129, 15);
+            this.cbFoodCategory.Margin = new System.Windows.Forms.Padding(2);
             this.cbFoodCategory.Name = "cbFoodCategory";
-            this.cbFoodCategory.Size = new System.Drawing.Size(261, 34);
+            this.cbFoodCategory.Size = new System.Drawing.Size(197, 21);
             this.cbFoodCategory.TabIndex = 1;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(4, 21);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label3.Location = new System.Drawing.Point(3, 17);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(106, 27);
+            this.label3.Size = new System.Drawing.Size(56, 13);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Category:";
+            this.label3.Text = "Danh mục";
             // 
             // panel6
             // 
             this.panel6.Controls.Add(this.txtFoodName);
             this.panel6.Controls.Add(this.label2);
-            this.panel6.Location = new System.Drawing.Point(13, 108);
+            this.panel6.Location = new System.Drawing.Point(10, 88);
+            this.panel6.Margin = new System.Windows.Forms.Padding(2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(446, 68);
+            this.panel6.Size = new System.Drawing.Size(334, 55);
             this.panel6.TabIndex = 3;
             // 
             // txtFoodName
             // 
-            this.txtFoodName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoodName.Location = new System.Drawing.Point(172, 18);
+            this.txtFoodName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtFoodName.Location = new System.Drawing.Point(129, 15);
+            this.txtFoodName.Margin = new System.Windows.Forms.Padding(2);
             this.txtFoodName.Name = "txtFoodName";
-            this.txtFoodName.Size = new System.Drawing.Size(261, 34);
+            this.txtFoodName.Size = new System.Drawing.Size(197, 20);
             this.txtFoodName.TabIndex = 8;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(4, 21);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label2.Location = new System.Drawing.Point(3, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 27);
+            this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Food name:";
+            this.label2.Text = "Tên món:";
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.txtFoodID);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(13, 17);
+            this.panel4.Location = new System.Drawing.Point(10, 14);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(446, 68);
+            this.panel4.Size = new System.Drawing.Size(334, 55);
             this.panel4.TabIndex = 2;
             // 
             // txtFoodID
             // 
-            this.txtFoodID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFoodID.Location = new System.Drawing.Point(172, 18);
+            this.txtFoodID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtFoodID.Location = new System.Drawing.Point(129, 15);
+            this.txtFoodID.Margin = new System.Windows.Forms.Padding(2);
             this.txtFoodID.Name = "txtFoodID";
             this.txtFoodID.ReadOnly = true;
-            this.txtFoodID.Size = new System.Drawing.Size(261, 34);
+            this.txtFoodID.Size = new System.Drawing.Size(197, 20);
             this.txtFoodID.TabIndex = 7;
             this.txtFoodID.TextChanged += new System.EventHandler(this.txtFoodID_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 21);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label1.Location = new System.Drawing.Point(3, 17);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(43, 27);
+            this.label1.Size = new System.Drawing.Size(21, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ID:";
             // 
@@ -388,17 +434,19 @@ namespace CoffeeShopManager
             // 
             this.panel7.Controls.Add(this.txtSearchFood);
             this.panel7.Controls.Add(this.btnSearchFood);
-            this.panel7.Location = new System.Drawing.Point(762, 6);
+            this.panel7.Location = new System.Drawing.Point(572, 5);
+            this.panel7.Margin = new System.Windows.Forms.Padding(2);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(462, 87);
+            this.panel7.Size = new System.Drawing.Size(346, 71);
             this.panel7.TabIndex = 3;
             // 
             // txtSearchFood
             // 
-            this.txtSearchFood.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSearchFood.Location = new System.Drawing.Point(22, 25);
+            this.txtSearchFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSearchFood.Location = new System.Drawing.Point(16, 27);
+            this.txtSearchFood.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchFood.Name = "txtSearchFood";
-            this.txtSearchFood.Size = new System.Drawing.Size(301, 36);
+            this.txtSearchFood.Size = new System.Drawing.Size(227, 23);
             this.txtSearchFood.TabIndex = 5;
             this.txtSearchFood.Text = "Nhập tên món ăn...\r\n";
             this.txtSearchFood.Click += new System.EventHandler(this.txtSearchFood_Click);
@@ -406,10 +454,11 @@ namespace CoffeeShopManager
             // 
             // btnSearchFood
             // 
-            this.btnSearchFood.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchFood.Location = new System.Drawing.Point(333, 25);
+            this.btnSearchFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnSearchFood.Location = new System.Drawing.Point(251, 24);
+            this.btnSearchFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchFood.Name = "btnSearchFood";
-            this.btnSearchFood.Size = new System.Drawing.Size(113, 36);
+            this.btnSearchFood.Size = new System.Drawing.Size(85, 29);
             this.btnSearchFood.TabIndex = 6;
             this.btnSearchFood.Text = "Tìm món";
             this.btnSearchFood.UseVisualStyleBackColor = true;
@@ -418,9 +467,10 @@ namespace CoffeeShopManager
             // panel3
             // 
             this.panel3.Controls.Add(this.dtgvFood);
-            this.panel3.Location = new System.Drawing.Point(6, 100);
+            this.panel3.Location = new System.Drawing.Point(4, 81);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(739, 510);
+            this.panel3.Size = new System.Drawing.Size(554, 414);
             this.panel3.TabIndex = 2;
             // 
             // dtgvFood
@@ -428,12 +478,13 @@ namespace CoffeeShopManager
             this.dtgvFood.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvFood.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dtgvFood.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvFood.Location = new System.Drawing.Point(3, 3);
+            this.dtgvFood.Location = new System.Drawing.Point(2, 2);
+            this.dtgvFood.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvFood.Name = "dtgvFood";
             this.dtgvFood.RowHeadersWidth = 51;
             this.dtgvFood.RowTemplate.Height = 30;
             this.dtgvFood.RowTemplate.ReadOnly = true;
-            this.dtgvFood.Size = new System.Drawing.Size(733, 504);
+            this.dtgvFood.Size = new System.Drawing.Size(550, 410);
             this.dtgvFood.TabIndex = 0;
             // 
             // pnlUserName
@@ -442,17 +493,19 @@ namespace CoffeeShopManager
             this.pnlUserName.Controls.Add(this.btnDelFood);
             this.pnlUserName.Controls.Add(this.btnEditFood);
             this.pnlUserName.Controls.Add(this.btnAddFood);
-            this.pnlUserName.Location = new System.Drawing.Point(6, 6);
+            this.pnlUserName.Location = new System.Drawing.Point(4, 5);
+            this.pnlUserName.Margin = new System.Windows.Forms.Padding(2);
             this.pnlUserName.Name = "pnlUserName";
-            this.pnlUserName.Size = new System.Drawing.Size(739, 87);
+            this.pnlUserName.Size = new System.Drawing.Size(554, 71);
             this.pnlUserName.TabIndex = 1;
             // 
             // btnShowFood
             // 
-            this.btnShowFood.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowFood.Location = new System.Drawing.Point(41, 19);
+            this.btnShowFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnShowFood.Location = new System.Drawing.Point(31, 15);
+            this.btnShowFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowFood.Name = "btnShowFood";
-            this.btnShowFood.Size = new System.Drawing.Size(125, 52);
+            this.btnShowFood.Size = new System.Drawing.Size(94, 42);
             this.btnShowFood.TabIndex = 4;
             this.btnShowFood.Text = "Hiển thị";
             this.btnShowFood.UseVisualStyleBackColor = true;
@@ -460,10 +513,11 @@ namespace CoffeeShopManager
             // 
             // btnDelFood
             // 
-            this.btnDelFood.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelFood.Location = new System.Drawing.Point(570, 19);
+            this.btnDelFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelFood.Location = new System.Drawing.Point(428, 15);
+            this.btnDelFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelFood.Name = "btnDelFood";
-            this.btnDelFood.Size = new System.Drawing.Size(125, 52);
+            this.btnDelFood.Size = new System.Drawing.Size(94, 42);
             this.btnDelFood.TabIndex = 3;
             this.btnDelFood.Text = "Xóa";
             this.btnDelFood.UseVisualStyleBackColor = true;
@@ -471,10 +525,11 @@ namespace CoffeeShopManager
             // 
             // btnEditFood
             // 
-            this.btnEditFood.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditFood.Location = new System.Drawing.Point(394, 18);
+            this.btnEditFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEditFood.Location = new System.Drawing.Point(296, 15);
+            this.btnEditFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditFood.Name = "btnEditFood";
-            this.btnEditFood.Size = new System.Drawing.Size(125, 52);
+            this.btnEditFood.Size = new System.Drawing.Size(94, 42);
             this.btnEditFood.TabIndex = 2;
             this.btnEditFood.Text = "Sửa";
             this.btnEditFood.UseVisualStyleBackColor = true;
@@ -482,10 +537,11 @@ namespace CoffeeShopManager
             // 
             // btnAddFood
             // 
-            this.btnAddFood.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddFood.Location = new System.Drawing.Point(216, 18);
+            this.btnAddFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddFood.Location = new System.Drawing.Point(162, 15);
+            this.btnAddFood.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddFood.Name = "btnAddFood";
-            this.btnAddFood.Size = new System.Drawing.Size(125, 52);
+            this.btnAddFood.Size = new System.Drawing.Size(94, 42);
             this.btnAddFood.TabIndex = 1;
             this.btnAddFood.Text = "Thêm";
             this.btnAddFood.UseVisualStyleBackColor = true;
@@ -497,22 +553,24 @@ namespace CoffeeShopManager
             this.tpCategory.Controls.Add(this.panel10);
             this.tpCategory.Controls.Add(this.panel16);
             this.tpCategory.Controls.Add(this.panel17);
-            this.tpCategory.Location = new System.Drawing.Point(4, 35);
+            this.tpCategory.Location = new System.Drawing.Point(4, 25);
+            this.tpCategory.Margin = new System.Windows.Forms.Padding(2);
             this.tpCategory.Name = "tpCategory";
-            this.tpCategory.Padding = new System.Windows.Forms.Padding(3);
-            this.tpCategory.Size = new System.Drawing.Size(1230, 610);
+            this.tpCategory.Padding = new System.Windows.Forms.Padding(2);
+            this.tpCategory.Size = new System.Drawing.Size(920, 498);
             this.tpCategory.TabIndex = 3;
-            this.tpCategory.Text = "Danh mục món ăn";
+            this.tpCategory.Text = "Danh mục thức uống";
             this.tpCategory.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.label15.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label15.Location = new System.Drawing.Point(865, 37);
+            this.label15.Location = new System.Drawing.Point(649, 30);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(259, 26);
+            this.label15.Size = new System.Drawing.Size(208, 22);
             this.label15.TabIndex = 6;
             this.label15.Text = "THÔNG TIN CHI TIẾT";
             // 
@@ -520,84 +578,93 @@ namespace CoffeeShopManager
             // 
             this.panel10.Controls.Add(this.panel13);
             this.panel10.Controls.Add(this.panel14);
-            this.panel10.Location = new System.Drawing.Point(762, 100);
+            this.panel10.Location = new System.Drawing.Point(572, 81);
+            this.panel10.Margin = new System.Windows.Forms.Padding(2);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(462, 510);
+            this.panel10.Size = new System.Drawing.Size(346, 414);
             this.panel10.TabIndex = 4;
             // 
             // panel13
             // 
             this.panel13.Controls.Add(this.txtCategoryName);
             this.panel13.Controls.Add(this.label7);
-            this.panel13.Location = new System.Drawing.Point(13, 108);
+            this.panel13.Location = new System.Drawing.Point(10, 88);
+            this.panel13.Margin = new System.Windows.Forms.Padding(2);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(446, 68);
+            this.panel13.Size = new System.Drawing.Size(334, 55);
             this.panel13.TabIndex = 3;
             // 
             // txtCategoryName
             // 
-            this.txtCategoryName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryName.Location = new System.Drawing.Point(172, 18);
+            this.txtCategoryName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCategoryName.Location = new System.Drawing.Point(129, 15);
+            this.txtCategoryName.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryName.Name = "txtCategoryName";
-            this.txtCategoryName.Size = new System.Drawing.Size(251, 34);
+            this.txtCategoryName.Size = new System.Drawing.Size(189, 20);
             this.txtCategoryName.TabIndex = 8;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 21);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label7.Location = new System.Drawing.Point(3, 17);
+            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(164, 27);
+            this.label7.Size = new System.Drawing.Size(76, 13);
             this.label7.TabIndex = 0;
-            this.label7.Text = "Category name:";
+            this.label7.Text = "Tên danh mục";
             // 
             // panel14
             // 
             this.panel14.Controls.Add(this.txtCategoryId);
             this.panel14.Controls.Add(this.label8);
-            this.panel14.Location = new System.Drawing.Point(13, 17);
+            this.panel14.Location = new System.Drawing.Point(10, 14);
+            this.panel14.Margin = new System.Windows.Forms.Padding(2);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(446, 68);
+            this.panel14.Size = new System.Drawing.Size(334, 55);
             this.panel14.TabIndex = 2;
             // 
             // txtCategoryId
             // 
-            this.txtCategoryId.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCategoryId.Location = new System.Drawing.Point(172, 18);
+            this.txtCategoryId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtCategoryId.Location = new System.Drawing.Point(129, 15);
+            this.txtCategoryId.Margin = new System.Windows.Forms.Padding(2);
             this.txtCategoryId.Name = "txtCategoryId";
             this.txtCategoryId.ReadOnly = true;
-            this.txtCategoryId.Size = new System.Drawing.Size(251, 34);
+            this.txtCategoryId.Size = new System.Drawing.Size(189, 20);
             this.txtCategoryId.TabIndex = 7;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(4, 21);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label8.Location = new System.Drawing.Point(3, 17);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(43, 27);
+            this.label8.Size = new System.Drawing.Size(21, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "ID:";
             // 
             // panel16
             // 
             this.panel16.Controls.Add(this.dtgvCategory);
-            this.panel16.Location = new System.Drawing.Point(6, 100);
+            this.panel16.Location = new System.Drawing.Point(4, 81);
+            this.panel16.Margin = new System.Windows.Forms.Padding(2);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(739, 510);
+            this.panel16.Size = new System.Drawing.Size(554, 414);
             this.panel16.TabIndex = 2;
             // 
             // dtgvCategory
             // 
             this.dtgvCategory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCategory.Location = new System.Drawing.Point(3, 3);
+            this.dtgvCategory.Location = new System.Drawing.Point(2, 2);
+            this.dtgvCategory.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvCategory.Name = "dtgvCategory";
             this.dtgvCategory.RowHeadersWidth = 51;
             this.dtgvCategory.RowTemplate.Height = 30;
             this.dtgvCategory.RowTemplate.ReadOnly = true;
-            this.dtgvCategory.Size = new System.Drawing.Size(733, 504);
+            this.dtgvCategory.Size = new System.Drawing.Size(550, 410);
             this.dtgvCategory.TabIndex = 0;
             // 
             // panel17
@@ -606,17 +673,19 @@ namespace CoffeeShopManager
             this.panel17.Controls.Add(this.btnDelCategory);
             this.panel17.Controls.Add(this.btnEditCategory);
             this.panel17.Controls.Add(this.btnAddCategory);
-            this.panel17.Location = new System.Drawing.Point(6, 6);
+            this.panel17.Location = new System.Drawing.Point(4, 5);
+            this.panel17.Margin = new System.Windows.Forms.Padding(2);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(739, 87);
+            this.panel17.Size = new System.Drawing.Size(554, 71);
             this.panel17.TabIndex = 1;
             // 
             // btnShowCategory
             // 
-            this.btnShowCategory.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowCategory.Location = new System.Drawing.Point(41, 19);
+            this.btnShowCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnShowCategory.Location = new System.Drawing.Point(31, 15);
+            this.btnShowCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowCategory.Name = "btnShowCategory";
-            this.btnShowCategory.Size = new System.Drawing.Size(125, 52);
+            this.btnShowCategory.Size = new System.Drawing.Size(94, 42);
             this.btnShowCategory.TabIndex = 4;
             this.btnShowCategory.Text = "Hiển thị";
             this.btnShowCategory.UseVisualStyleBackColor = true;
@@ -624,10 +693,11 @@ namespace CoffeeShopManager
             // 
             // btnDelCategory
             // 
-            this.btnDelCategory.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelCategory.Location = new System.Drawing.Point(570, 19);
+            this.btnDelCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelCategory.Location = new System.Drawing.Point(428, 15);
+            this.btnDelCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelCategory.Name = "btnDelCategory";
-            this.btnDelCategory.Size = new System.Drawing.Size(125, 52);
+            this.btnDelCategory.Size = new System.Drawing.Size(94, 42);
             this.btnDelCategory.TabIndex = 3;
             this.btnDelCategory.Text = "Xóa";
             this.btnDelCategory.UseVisualStyleBackColor = true;
@@ -635,10 +705,11 @@ namespace CoffeeShopManager
             // 
             // btnEditCategory
             // 
-            this.btnEditCategory.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCategory.Location = new System.Drawing.Point(394, 18);
+            this.btnEditCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEditCategory.Location = new System.Drawing.Point(296, 15);
+            this.btnEditCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditCategory.Name = "btnEditCategory";
-            this.btnEditCategory.Size = new System.Drawing.Size(125, 52);
+            this.btnEditCategory.Size = new System.Drawing.Size(94, 42);
             this.btnEditCategory.TabIndex = 2;
             this.btnEditCategory.Text = "Sửa";
             this.btnEditCategory.UseVisualStyleBackColor = true;
@@ -646,10 +717,11 @@ namespace CoffeeShopManager
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCategory.Location = new System.Drawing.Point(216, 18);
+            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddCategory.Location = new System.Drawing.Point(162, 15);
+            this.btnAddCategory.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(125, 52);
+            this.btnAddCategory.Size = new System.Drawing.Size(94, 42);
             this.btnAddCategory.TabIndex = 1;
             this.btnAddCategory.Text = "Thêm";
             this.btnAddCategory.UseVisualStyleBackColor = true;
@@ -661,10 +733,11 @@ namespace CoffeeShopManager
             this.tpTable.Controls.Add(this.panel11);
             this.tpTable.Controls.Add(this.panel21);
             this.tpTable.Controls.Add(this.panel22);
-            this.tpTable.Location = new System.Drawing.Point(4, 35);
+            this.tpTable.Location = new System.Drawing.Point(4, 25);
+            this.tpTable.Margin = new System.Windows.Forms.Padding(2);
             this.tpTable.Name = "tpTable";
-            this.tpTable.Padding = new System.Windows.Forms.Padding(3);
-            this.tpTable.Size = new System.Drawing.Size(1230, 610);
+            this.tpTable.Padding = new System.Windows.Forms.Padding(2);
+            this.tpTable.Size = new System.Drawing.Size(920, 498);
             this.tpTable.TabIndex = 4;
             this.tpTable.Text = "Bàn ăn";
             this.tpTable.UseVisualStyleBackColor = true;
@@ -672,11 +745,12 @@ namespace CoffeeShopManager
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.label14.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label14.Location = new System.Drawing.Point(865, 37);
+            this.label14.Location = new System.Drawing.Point(649, 30);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(259, 26);
+            this.label14.Size = new System.Drawing.Size(208, 22);
             this.label14.TabIndex = 6;
             this.label14.Text = "THÔNG TIN CHI TIẾT";
             // 
@@ -685,35 +759,39 @@ namespace CoffeeShopManager
             this.panel11.Controls.Add(this.panel15);
             this.panel11.Controls.Add(this.panel18);
             this.panel11.Controls.Add(this.panel19);
-            this.panel11.Location = new System.Drawing.Point(762, 100);
+            this.panel11.Location = new System.Drawing.Point(572, 81);
+            this.panel11.Margin = new System.Windows.Forms.Padding(2);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(462, 510);
+            this.panel11.Size = new System.Drawing.Size(346, 414);
             this.panel11.TabIndex = 4;
             // 
             // panel15
             // 
             this.panel15.Controls.Add(this.txtTableStatus);
             this.panel15.Controls.Add(this.label6);
-            this.panel15.Location = new System.Drawing.Point(13, 199);
+            this.panel15.Location = new System.Drawing.Point(10, 162);
+            this.panel15.Margin = new System.Windows.Forms.Padding(2);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(446, 68);
+            this.panel15.Size = new System.Drawing.Size(334, 55);
             this.panel15.TabIndex = 4;
             // 
             // txtTableStatus
             // 
-            this.txtTableStatus.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableStatus.Location = new System.Drawing.Point(172, 14);
+            this.txtTableStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtTableStatus.Location = new System.Drawing.Point(108, 10);
+            this.txtTableStatus.Margin = new System.Windows.Forms.Padding(2);
             this.txtTableStatus.Name = "txtTableStatus";
-            this.txtTableStatus.Size = new System.Drawing.Size(272, 34);
+            this.txtTableStatus.Size = new System.Drawing.Size(205, 20);
             this.txtTableStatus.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 21);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label6.Location = new System.Drawing.Point(3, 17);
+            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(76, 27);
+            this.label6.Size = new System.Drawing.Size(40, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "Status:";
             // 
@@ -721,26 +799,29 @@ namespace CoffeeShopManager
             // 
             this.panel18.Controls.Add(this.txtTableName);
             this.panel18.Controls.Add(this.label9);
-            this.panel18.Location = new System.Drawing.Point(13, 108);
+            this.panel18.Location = new System.Drawing.Point(10, 88);
+            this.panel18.Margin = new System.Windows.Forms.Padding(2);
             this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(446, 68);
+            this.panel18.Size = new System.Drawing.Size(334, 55);
             this.panel18.TabIndex = 3;
             // 
             // txtTableName
             // 
-            this.txtTableName.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableName.Location = new System.Drawing.Point(172, 14);
+            this.txtTableName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtTableName.Location = new System.Drawing.Point(108, 10);
+            this.txtTableName.Margin = new System.Windows.Forms.Padding(2);
             this.txtTableName.Name = "txtTableName";
-            this.txtTableName.Size = new System.Drawing.Size(272, 34);
+            this.txtTableName.Size = new System.Drawing.Size(205, 20);
             this.txtTableName.TabIndex = 8;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(4, 21);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label9.Location = new System.Drawing.Point(3, 17);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(128, 27);
+            this.label9.Size = new System.Drawing.Size(66, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "Table name:";
             // 
@@ -748,48 +829,53 @@ namespace CoffeeShopManager
             // 
             this.panel19.Controls.Add(this.txtTableID);
             this.panel19.Controls.Add(this.label10);
-            this.panel19.Location = new System.Drawing.Point(13, 17);
+            this.panel19.Location = new System.Drawing.Point(10, 14);
+            this.panel19.Margin = new System.Windows.Forms.Padding(2);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(446, 68);
+            this.panel19.Size = new System.Drawing.Size(334, 55);
             this.panel19.TabIndex = 2;
             // 
             // txtTableID
             // 
-            this.txtTableID.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTableID.Location = new System.Drawing.Point(172, 14);
+            this.txtTableID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtTableID.Location = new System.Drawing.Point(108, 14);
+            this.txtTableID.Margin = new System.Windows.Forms.Padding(2);
             this.txtTableID.Name = "txtTableID";
             this.txtTableID.ReadOnly = true;
-            this.txtTableID.Size = new System.Drawing.Size(272, 34);
+            this.txtTableID.Size = new System.Drawing.Size(205, 20);
             this.txtTableID.TabIndex = 7;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 21);
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label10.Location = new System.Drawing.Point(3, 17);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(43, 27);
+            this.label10.Size = new System.Drawing.Size(21, 13);
             this.label10.TabIndex = 0;
             this.label10.Text = "ID:";
             // 
             // panel21
             // 
             this.panel21.Controls.Add(this.dtgvTable);
-            this.panel21.Location = new System.Drawing.Point(6, 100);
+            this.panel21.Location = new System.Drawing.Point(4, 81);
+            this.panel21.Margin = new System.Windows.Forms.Padding(2);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(739, 510);
+            this.panel21.Size = new System.Drawing.Size(554, 414);
             this.panel21.TabIndex = 2;
             // 
             // dtgvTable
             // 
             this.dtgvTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvTable.Location = new System.Drawing.Point(3, 3);
+            this.dtgvTable.Location = new System.Drawing.Point(2, 2);
+            this.dtgvTable.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvTable.Name = "dtgvTable";
             this.dtgvTable.RowHeadersWidth = 51;
             this.dtgvTable.RowTemplate.Height = 30;
             this.dtgvTable.RowTemplate.ReadOnly = true;
-            this.dtgvTable.Size = new System.Drawing.Size(733, 504);
+            this.dtgvTable.Size = new System.Drawing.Size(550, 410);
             this.dtgvTable.TabIndex = 0;
             // 
             // panel22
@@ -798,17 +884,19 @@ namespace CoffeeShopManager
             this.panel22.Controls.Add(this.btnDeltable);
             this.panel22.Controls.Add(this.btnAddTable);
             this.panel22.Controls.Add(this.btnEditTable);
-            this.panel22.Location = new System.Drawing.Point(6, 6);
+            this.panel22.Location = new System.Drawing.Point(4, 5);
+            this.panel22.Margin = new System.Windows.Forms.Padding(2);
             this.panel22.Name = "panel22";
-            this.panel22.Size = new System.Drawing.Size(739, 87);
+            this.panel22.Size = new System.Drawing.Size(554, 71);
             this.panel22.TabIndex = 1;
             // 
             // btnShowTable
             // 
-            this.btnShowTable.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowTable.Location = new System.Drawing.Point(41, 19);
+            this.btnShowTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnShowTable.Location = new System.Drawing.Point(31, 15);
+            this.btnShowTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowTable.Name = "btnShowTable";
-            this.btnShowTable.Size = new System.Drawing.Size(125, 52);
+            this.btnShowTable.Size = new System.Drawing.Size(94, 42);
             this.btnShowTable.TabIndex = 4;
             this.btnShowTable.Text = "Hiển thị";
             this.btnShowTable.UseVisualStyleBackColor = true;
@@ -816,10 +904,11 @@ namespace CoffeeShopManager
             // 
             // btnDeltable
             // 
-            this.btnDeltable.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeltable.Location = new System.Drawing.Point(570, 19);
+            this.btnDeltable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDeltable.Location = new System.Drawing.Point(428, 15);
+            this.btnDeltable.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeltable.Name = "btnDeltable";
-            this.btnDeltable.Size = new System.Drawing.Size(125, 52);
+            this.btnDeltable.Size = new System.Drawing.Size(94, 42);
             this.btnDeltable.TabIndex = 3;
             this.btnDeltable.Text = "Xóa";
             this.btnDeltable.UseVisualStyleBackColor = true;
@@ -827,10 +916,11 @@ namespace CoffeeShopManager
             // 
             // btnAddTable
             // 
-            this.btnAddTable.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddTable.Location = new System.Drawing.Point(216, 18);
+            this.btnAddTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddTable.Location = new System.Drawing.Point(162, 15);
+            this.btnAddTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddTable.Name = "btnAddTable";
-            this.btnAddTable.Size = new System.Drawing.Size(125, 52);
+            this.btnAddTable.Size = new System.Drawing.Size(94, 42);
             this.btnAddTable.TabIndex = 1;
             this.btnAddTable.Text = "Thêm";
             this.btnAddTable.UseVisualStyleBackColor = true;
@@ -838,10 +928,11 @@ namespace CoffeeShopManager
             // 
             // btnEditTable
             // 
-            this.btnEditTable.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditTable.Location = new System.Drawing.Point(394, 18);
+            this.btnEditTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEditTable.Location = new System.Drawing.Point(296, 15);
+            this.btnEditTable.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditTable.Name = "btnEditTable";
-            this.btnEditTable.Size = new System.Drawing.Size(125, 52);
+            this.btnEditTable.Size = new System.Drawing.Size(94, 42);
             this.btnEditTable.TabIndex = 2;
             this.btnEditTable.Text = "Sửa";
             this.btnEditTable.UseVisualStyleBackColor = true;
@@ -853,10 +944,11 @@ namespace CoffeeShopManager
             this.tpAccount.Controls.Add(this.panel12);
             this.tpAccount.Controls.Add(this.panel25);
             this.tpAccount.Controls.Add(this.panel26);
-            this.tpAccount.Location = new System.Drawing.Point(4, 35);
+            this.tpAccount.Location = new System.Drawing.Point(4, 25);
+            this.tpAccount.Margin = new System.Windows.Forms.Padding(2);
             this.tpAccount.Name = "tpAccount";
-            this.tpAccount.Padding = new System.Windows.Forms.Padding(3);
-            this.tpAccount.Size = new System.Drawing.Size(1230, 610);
+            this.tpAccount.Padding = new System.Windows.Forms.Padding(2);
+            this.tpAccount.Size = new System.Drawing.Size(920, 498);
             this.tpAccount.TabIndex = 5;
             this.tpAccount.Text = "Tài khoản";
             this.tpAccount.UseVisualStyleBackColor = true;
@@ -864,31 +956,33 @@ namespace CoffeeShopManager
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold);
             this.label13.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.label13.Location = new System.Drawing.Point(865, 37);
+            this.label13.Location = new System.Drawing.Point(649, 30);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(259, 26);
+            this.label13.Size = new System.Drawing.Size(208, 22);
             this.label13.TabIndex = 5;
             this.label13.Text = "THÔNG TIN CHI TIẾT";
             // 
             // panel12
             // 
-            this.panel12.Controls.Add(this.btnResetPass);
             this.panel12.Controls.Add(this.panel20);
             this.panel12.Controls.Add(this.panel23);
             this.panel12.Controls.Add(this.panel24);
-            this.panel12.Location = new System.Drawing.Point(762, 100);
+            this.panel12.Location = new System.Drawing.Point(572, 81);
+            this.panel12.Margin = new System.Windows.Forms.Padding(2);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(462, 510);
+            this.panel12.Size = new System.Drawing.Size(346, 414);
             this.panel12.TabIndex = 4;
             // 
             // btnResetPass
             // 
-            this.btnResetPass.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetPass.Location = new System.Drawing.Point(253, 290);
+            this.btnResetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnResetPass.Location = new System.Drawing.Point(19, 15);
+            this.btnResetPass.Margin = new System.Windows.Forms.Padding(2);
             this.btnResetPass.Name = "btnResetPass";
-            this.btnResetPass.Size = new System.Drawing.Size(158, 82);
+            this.btnResetPass.Size = new System.Drawing.Size(118, 42);
             this.btnResetPass.TabIndex = 5;
             this.btnResetPass.Text = "Khôi phục mật khẩu";
             this.btnResetPass.UseVisualStyleBackColor = true;
@@ -898,26 +992,29 @@ namespace CoffeeShopManager
             // 
             this.panel20.Controls.Add(this.txtAccountType);
             this.panel20.Controls.Add(this.label5);
-            this.panel20.Location = new System.Drawing.Point(13, 199);
+            this.panel20.Location = new System.Drawing.Point(10, 162);
+            this.panel20.Margin = new System.Windows.Forms.Padding(2);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(446, 68);
+            this.panel20.Size = new System.Drawing.Size(334, 55);
             this.panel20.TabIndex = 4;
             // 
             // txtAccountType
             // 
-            this.txtAccountType.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAccountType.Location = new System.Drawing.Point(172, 14);
+            this.txtAccountType.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtAccountType.Location = new System.Drawing.Point(117, 11);
+            this.txtAccountType.Margin = new System.Windows.Forms.Padding(2);
             this.txtAccountType.Name = "txtAccountType";
-            this.txtAccountType.Size = new System.Drawing.Size(261, 33);
+            this.txtAccountType.Size = new System.Drawing.Size(197, 20);
             this.txtAccountType.TabIndex = 9;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(4, 17);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label5.Location = new System.Drawing.Point(3, 14);
+            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(143, 25);
+            this.label5.Size = new System.Drawing.Size(77, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Loại tài khoản:";
             // 
@@ -925,26 +1022,29 @@ namespace CoffeeShopManager
             // 
             this.panel23.Controls.Add(this.txtDisplayName);
             this.panel23.Controls.Add(this.label11);
-            this.panel23.Location = new System.Drawing.Point(13, 108);
+            this.panel23.Location = new System.Drawing.Point(10, 88);
+            this.panel23.Margin = new System.Windows.Forms.Padding(2);
             this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(446, 68);
+            this.panel23.Size = new System.Drawing.Size(334, 55);
             this.panel23.TabIndex = 3;
             // 
             // txtDisplayName
             // 
-            this.txtDisplayName.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDisplayName.Location = new System.Drawing.Point(172, 18);
+            this.txtDisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtDisplayName.Location = new System.Drawing.Point(117, 14);
+            this.txtDisplayName.Margin = new System.Windows.Forms.Padding(2);
             this.txtDisplayName.Name = "txtDisplayName";
-            this.txtDisplayName.Size = new System.Drawing.Size(261, 33);
+            this.txtDisplayName.Size = new System.Drawing.Size(197, 20);
             this.txtDisplayName.TabIndex = 8;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(4, 21);
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label11.Location = new System.Drawing.Point(3, 17);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(122, 25);
+            this.label11.Size = new System.Drawing.Size(66, 13);
             this.label11.TabIndex = 0;
             this.label11.Text = "Tên hiển thị:";
             // 
@@ -952,77 +1052,73 @@ namespace CoffeeShopManager
             // 
             this.panel24.Controls.Add(this.txtUserName);
             this.panel24.Controls.Add(this.label12);
-            this.panel24.Location = new System.Drawing.Point(13, 17);
+            this.panel24.Location = new System.Drawing.Point(10, 14);
+            this.panel24.Margin = new System.Windows.Forms.Padding(2);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(446, 68);
+            this.panel24.Size = new System.Drawing.Size(334, 55);
             this.panel24.TabIndex = 2;
             // 
             // txtUserName
             // 
-            this.txtUserName.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUserName.Location = new System.Drawing.Point(172, 18);
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.txtUserName.Location = new System.Drawing.Point(117, 14);
+            this.txtUserName.Margin = new System.Windows.Forms.Padding(2);
             this.txtUserName.Name = "txtUserName";
-            this.txtUserName.Size = new System.Drawing.Size(261, 33);
+            this.txtUserName.Size = new System.Drawing.Size(197, 20);
             this.txtUserName.TabIndex = 7;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(4, 21);
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label12.Location = new System.Drawing.Point(3, 17);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(146, 25);
+            this.label12.Size = new System.Drawing.Size(84, 13);
             this.label12.TabIndex = 0;
             this.label12.Text = "Tên đăng nhập:";
             // 
             // panel25
             // 
             this.panel25.Controls.Add(this.dtgvAccount);
-            this.panel25.Location = new System.Drawing.Point(6, 100);
+            this.panel25.Location = new System.Drawing.Point(4, 81);
+            this.panel25.Margin = new System.Windows.Forms.Padding(2);
             this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(739, 510);
+            this.panel25.Size = new System.Drawing.Size(554, 414);
             this.panel25.TabIndex = 2;
             // 
             // dtgvAccount
             // 
             this.dtgvAccount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvAccount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvAccount.Location = new System.Drawing.Point(3, 3);
+            this.dtgvAccount.Location = new System.Drawing.Point(2, 2);
+            this.dtgvAccount.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.RowHeadersWidth = 51;
             this.dtgvAccount.RowTemplate.Height = 30;
             this.dtgvAccount.RowTemplate.ReadOnly = true;
-            this.dtgvAccount.Size = new System.Drawing.Size(733, 504);
+            this.dtgvAccount.Size = new System.Drawing.Size(550, 410);
             this.dtgvAccount.TabIndex = 0;
             // 
             // panel26
             // 
-            this.panel26.Controls.Add(this.btnShowAccount);
+            this.panel26.Controls.Add(this.btnResetPass);
             this.panel26.Controls.Add(this.btnDelAccount);
             this.panel26.Controls.Add(this.btnEditAccount);
             this.panel26.Controls.Add(this.btnAddAccount);
-            this.panel26.Location = new System.Drawing.Point(6, 6);
+            this.panel26.Location = new System.Drawing.Point(4, 5);
+            this.panel26.Margin = new System.Windows.Forms.Padding(2);
             this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(739, 87);
+            this.panel26.Size = new System.Drawing.Size(554, 71);
             this.panel26.TabIndex = 1;
-            // 
-            // btnShowAccount
-            // 
-            this.btnShowAccount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowAccount.Location = new System.Drawing.Point(41, 19);
-            this.btnShowAccount.Name = "btnShowAccount";
-            this.btnShowAccount.Size = new System.Drawing.Size(125, 52);
-            this.btnShowAccount.TabIndex = 4;
-            this.btnShowAccount.Text = "Hiển thị";
-            this.btnShowAccount.UseVisualStyleBackColor = true;
-            this.btnShowAccount.Click += new System.EventHandler(this.btnShowAccount_Click);
             // 
             // btnDelAccount
             // 
-            this.btnDelAccount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelAccount.Location = new System.Drawing.Point(570, 19);
+            this.btnDelAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnDelAccount.Location = new System.Drawing.Point(427, 15);
+            this.btnDelAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnDelAccount.Name = "btnDelAccount";
-            this.btnDelAccount.Size = new System.Drawing.Size(125, 52);
+            this.btnDelAccount.Size = new System.Drawing.Size(94, 42);
             this.btnDelAccount.TabIndex = 3;
             this.btnDelAccount.Text = "Xóa";
             this.btnDelAccount.UseVisualStyleBackColor = true;
@@ -1030,10 +1126,11 @@ namespace CoffeeShopManager
             // 
             // btnEditAccount
             // 
-            this.btnEditAccount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditAccount.Location = new System.Drawing.Point(394, 18);
+            this.btnEditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnEditAccount.Location = new System.Drawing.Point(299, 15);
+            this.btnEditAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditAccount.Name = "btnEditAccount";
-            this.btnEditAccount.Size = new System.Drawing.Size(125, 52);
+            this.btnEditAccount.Size = new System.Drawing.Size(94, 42);
             this.btnEditAccount.TabIndex = 2;
             this.btnEditAccount.Text = "Sửa";
             this.btnEditAccount.UseVisualStyleBackColor = true;
@@ -1041,10 +1138,11 @@ namespace CoffeeShopManager
             // 
             // btnAddAccount
             // 
-            this.btnAddAccount.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddAccount.Location = new System.Drawing.Point(216, 18);
+            this.btnAddAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnAddAccount.Location = new System.Drawing.Point(171, 15);
+            this.btnAddAccount.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAccount.Name = "btnAddAccount";
-            this.btnAddAccount.Size = new System.Drawing.Size(125, 52);
+            this.btnAddAccount.Size = new System.Drawing.Size(94, 42);
             this.btnAddAccount.TabIndex = 1;
             this.btnAddAccount.Text = "Thêm";
             this.btnAddAccount.UseVisualStyleBackColor = true;
@@ -1052,15 +1150,17 @@ namespace CoffeeShopManager
             // 
             // fAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.ClientSize = new System.Drawing.Size(946, 547);
             this.Controls.Add(this.tcAdmin);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Trang quản trị";
+            this.Text = "Cập nhật danh mục";
             this.tpRevenue.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.tcAdmin.ResumeLayout(false);
@@ -1197,7 +1297,6 @@ namespace CoffeeShopManager
         private System.Windows.Forms.Panel panel25;
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Button btnShowAccount;
         private System.Windows.Forms.Button btnDelAccount;
         private System.Windows.Forms.Button btnEditAccount;
         private System.Windows.Forms.Button btnAddAccount;
@@ -1207,5 +1306,7 @@ namespace CoffeeShopManager
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }

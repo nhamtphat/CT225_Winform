@@ -16,6 +16,7 @@ namespace CoffeeShopManager
     {
         private Account loginAccount;
 
+        SqlConnection connection;
 
         public Account LoginAccount
         {
@@ -25,57 +26,59 @@ namespace CoffeeShopManager
                 loginAccount = value;
             }
         }
+
         public fAccountProfile(Account acc)
         {
             InitializeComponent();
+            connection = DBInstance.generate();
             LoginAccount = acc;
             LoadAccount();
         }
-        #region Methods
+       
         Account getAccount(string username)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectSTR);
-            connection.Open();
             string query = "SELECT * FROM Account WHERE UserName = N'" + username + "'";
             SqlCommand command = new SqlCommand(query, connection);
             DataTable data = new DataTable();
             SqlDataAdapter adapter = new SqlDataAdapter(command);
             adapter.Fill(data);
-            connection.Close();
             foreach (DataRow item in data.Rows)
             {
                 return new Account(item);
             }
             return null;
         }
+
         public bool UpdateAccount(string username, string displayName, string password, string newpass)
         {
-            string connectSTR = @"Data Source=.\sqlexpress;Initial Catalog=Coffee_Shop_Manager;Integrated Security=True";
-
-            SqlConnection connection = new SqlConnection(connectSTR);
-
-            connection.Open();
             string query = "";
+
             if (newpass.Equals(""))
             {
-                query += "UPDATE Account SET DisplayName = N'" + displayName + "' WHERE UserName = N'" + username + "' AND PassWord = N'" + password + "'";
+                query += "UPDATE Account SET DisplayName = N'" + displayName + "' WHERE UserName = N'" + username + "'";
             }
-            else query = "UPDATE Account SET DisplayName = N'"+ displayName+"', PassWord = N'"+ newpass + "' WHERE UserName = N'" + username + "' AND PassWord = N'" + password + "'";
+
+            else
+            {
+                newpass = EncodingPassword(newpass);
+                query = "UPDATE Account SET DisplayName = N'" + displayName + "', PassWord = N'" + newpass + "' WHERE UserName = N'" + username + "' AND PassWord = N'" + password + "'";
+            }
+
+
             SqlCommand command = new SqlCommand(query, connection);
             int result = 0;
 
             result = (int)command.ExecuteNonQuery();
 
-            connection.Close();
-
             return result > 0;
         }
+
         void LoadAccount()
         {
             txtUserName.Text = LoginAccount.UserName;
             txtDisplayName.Text = LoginAccount.DisplayName;
         }
+
         public string EncodingPassword(string pass_input)
         {
             byte[] temp = ASCIIEncoding.ASCII.GetBytes(pass_input);
@@ -86,22 +89,14 @@ namespace CoffeeShopManager
                 pass += item;
             }
             char[] arr = pass.ToCharArray(); // chuỗi thành mảng ký tự
-            Array.Reverse(arr); // đảo ngược mảng
             return new string(arr);
         }
-        #endregion
 
-        #region Events
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private event EventHandler<AccountEvent> updateAccountEvent;
-        public event EventHandler<AccountEvent> UpdateAccountEvent
-        {
-            add { updateAccountEvent += value; }
-            remove { updateAccountEvent -= value; }
-        }
+
         private void btnUpdateAccount_Click(object sender, EventArgs e)
         {
             string display_name = txtDisplayName.Text;
@@ -109,42 +104,23 @@ namespace CoffeeShopManager
             string new_password = txtNewPass.Text;
             string reTypingPassword = txtRetypeNewPass.Text;
             string username = txtUserName.Text;
+
             if (!reTypingPassword.Equals(new_password))
             {
                 new_password = reTypingPassword = null;
-                MessageBox.Show("Xác thực mật khẩu mới KHÔNG thành công !!!", "Báo lỗi !");
+                MessageBox.Show("Nhập lại mật khẩu không chính xác", "Thông báo!");
                 return;
             }
-            if (UpdateAccount(username, display_name, current_password, EncodingPassword(new_password)))
+
+            if (UpdateAccount(username, display_name, current_password, new_password))
             {
-                MessageBox.Show("Cập nhật tài khoản thành công !!!", "Thông báo !");
-                if (updateAccountEvent != null)
-                {
-                    updateAccountEvent(this, new AccountEvent(getAccount(username)));
-                }
+                MessageBox.Show("Cập nhật thành công!", "Thông báo!");
             }
             else
             {
-                MessageBox.Show("Cập nhật tài khoản KHÔNG thành công !!!", "Báo lỗi !");
+                MessageBox.Show("Sai mật khẩu hiện tại!", "Thông báo!");
             }
         }
-
-        #endregion
-        #region AccountEvents
-        public class AccountEvent : EventArgs
-        {
-            private Account acc;
-            public Account Acc
-            {
-                get { return acc; }
-                set { acc = value; }
-            }
-            public AccountEvent(Account acc)
-            {
-                this.Acc = acc;
-            }
-        }
-        #endregion
 
     }
 }

@@ -46,7 +46,6 @@ namespace CoffeeShopManager
             set { name = value; }
         }
         private int id;
-        private DataRow item;
 
         public int Id
         {
