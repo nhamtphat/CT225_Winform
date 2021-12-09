@@ -101,7 +101,6 @@ namespace CoffeeShopManager
             this.tpAccount = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.panel12 = new System.Windows.Forms.Panel();
-            this.btnResetPass = new System.Windows.Forms.Button();
             this.panel20 = new System.Windows.Forms.Panel();
             this.txtAccountType = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -114,6 +113,7 @@ namespace CoffeeShopManager
             this.panel25 = new System.Windows.Forms.Panel();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
             this.panel26 = new System.Windows.Forms.Panel();
+            this.btnResetPass = new System.Windows.Forms.Button();
             this.btnDelAccount = new System.Windows.Forms.Button();
             this.btnEditAccount = new System.Windows.Forms.Button();
             this.btnAddAccount = new System.Windows.Forms.Button();
@@ -287,7 +287,7 @@ namespace CoffeeShopManager
             this.tpFood.Padding = new System.Windows.Forms.Padding(2);
             this.tpFood.Size = new System.Drawing.Size(920, 498);
             this.tpFood.TabIndex = 2;
-            this.tpFood.Text = "Món ăn";
+            this.tpFood.Text = "Thức uống";
             this.tpFood.UseVisualStyleBackColor = true;
             // 
             // panel5
@@ -976,18 +976,6 @@ namespace CoffeeShopManager
             this.panel12.Size = new System.Drawing.Size(346, 414);
             this.panel12.TabIndex = 4;
             // 
-            // btnResetPass
-            // 
-            this.btnResetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.btnResetPass.Location = new System.Drawing.Point(19, 15);
-            this.btnResetPass.Margin = new System.Windows.Forms.Padding(2);
-            this.btnResetPass.Name = "btnResetPass";
-            this.btnResetPass.Size = new System.Drawing.Size(118, 42);
-            this.btnResetPass.TabIndex = 5;
-            this.btnResetPass.Text = "Khôi phục mật khẩu";
-            this.btnResetPass.UseVisualStyleBackColor = true;
-            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
-            // 
             // panel20
             // 
             this.panel20.Controls.Add(this.txtAccountType);
@@ -1111,6 +1099,18 @@ namespace CoffeeShopManager
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(554, 71);
             this.panel26.TabIndex = 1;
+            // 
+            // btnResetPass
+            // 
+            this.btnResetPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.btnResetPass.Location = new System.Drawing.Point(19, 15);
+            this.btnResetPass.Margin = new System.Windows.Forms.Padding(2);
+            this.btnResetPass.Name = "btnResetPass";
+            this.btnResetPass.Size = new System.Drawing.Size(118, 42);
+            this.btnResetPass.TabIndex = 5;
+            this.btnResetPass.Text = "Khôi phục mật khẩu";
+            this.btnResetPass.UseVisualStyleBackColor = true;
+            this.btnResetPass.Click += new System.EventHandler(this.btnResetPass_Click);
             // 
             // btnDelAccount
             // 
